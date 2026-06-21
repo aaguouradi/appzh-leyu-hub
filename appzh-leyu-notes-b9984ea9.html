@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>乐鱼体育 · 稳定入口与平台说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f5f7fa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+      line-height: 1.6;
+      color: #1e2a3a;
+    }
+    .wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 4rem;
+    }
+
+    /* 深色头图区块 */
+    .hero {
+      background: linear-gradient(145deg, #0a1628 0%, #19273c 100%);
+      border-radius: 28px;
+      padding: 3rem 2.2rem 2.8rem;
+      margin-bottom: 2.8rem;
+      color: #eef4ff;
+      box-shadow: 0 20px 30px -10px rgba(0, 20, 40, 0.35);
+    }
+    .hero .brand-span {
+      display: inline-block;
+      background: rgba(255, 215, 0, 0.12);
+      color: #f6d76b;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1.4rem;
+      border: 1px solid rgba(246, 215, 107, 0.25);
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+    }
+    .hero h1 strong {
+      font-weight: 600;
+      color: #f9de7e;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #cbd7ed;
+      max-width: 75%;
+      margin-top: 0.8rem;
+    }
+    @media (max-width: 600px) {
+      .hero {
+        padding: 2.2rem 1.5rem 2rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+    }
+
+    /* 承接段落 — 从稳定入口切入 */
+    .intro-copy {
+      background: white;
+      padding: 2rem 2.2rem;
+      border-radius: 24px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+      border: 1px solid #e8edf5;
+    }
+    .intro-copy p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      color: #2a384b;
+    }
+    .intro-copy p:last-child {
+      margin-bottom: 0;
+    }
+    .intro-copy .highlight-link {
+      font-weight: 500;
+    }
+
+    /* 特点列表 —— 卡片风格 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.8rem;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.6rem 1.4rem;
+      border: 1px solid #e6ecf5;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .feature-card:hover {
+      border-color: #b8c9e0;
+      box-shadow: 0 12px 24px -12px rgba(30, 42, 58, 0.08);
+    }
+    .feature-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #14202e;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #4f5e73;
+      line-height: 1.5;
+    }
+    .feature-card .accent-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c9783b;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* 温和结尾 / 加一段场景或提示 */
+    .closing-note {
+      background: #f0f3f9;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #b9975e;
+    }
+    .closing-note p {
+      font-size: 0.95rem;
+      color: #2e3e55;
+      margin-bottom: 0.6rem;
+    }
+    .closing-note p:last-of-type {
+      margin-bottom: 0;
+    }
+    .closing-note .small-ref {
+      font-size: 0.8rem;
+      color: #6b7c94;
+      margin-top: 0.6rem;
+    }
+
+    /* 链接强调色 */
+    a {
+      color: #b46f2c;
+      text-decoration: underline;
+      text-decoration-thickness: 0.1em;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+    a:hover {
+      color: #7b4d1e;
+    }
+    .intro-copy a {
+      font-weight: 500;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 480px) {
+      .wrapper {
+        padding: 1.2rem 0.8rem 3rem;
+      }
+      .intro-copy {
+        padding: 1.4rem 1.2rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .closing-note {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- 深色头图 hero -->
+  <div class="hero">
+    <span class="brand-span"> · 持续可用 · 直达路径</span>
+    <h1>找到稳定入口，<strong>乐鱼体育</strong> 随时可触达</h1>
+    <p>从入口到内容，每一次访问都基于简洁可靠的链路。</p>
+  </div>
+
+  <!-- 承接段落：从入口与页面说明切入 -->
+  <div class="intro-copy">
+    <p>
+      对很多用户来说，访问一个平台的第一件事是确认入口是否直接、稳定。
+      <a href="https://appzh-leyu.com.cn" class="highlight-link">乐鱼体育</a>
+      始终将「可及性」作为基础设计原则，主页结构清晰，无需多层跳转即可抵达核心模块。无论使用桌面浏览器还是移动设备，页面加载与导航响应均保持统一节奏。
+    </p>
+    <p>
+      平台页面说明同样克制：首页聚合最新资讯、赛事索引与常用功能，不堆砌多余弹窗或干扰元素。入口即起点，而非迷宫。下文列出几个支撑日常使用的实际特点。
+    </p>
+  </div>
+
+  <!-- 特点列表 -->
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="icon">⚡</span>
+      <h3>直达结构</h3>
+      <p><span class="accent-dot"></span>首页至内容页不超过两次点击，路径可预期。</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🔄</span>
+      <h3>多端适配</h3>
+      <p>响应式布局覆盖手机、平板与电脑，排版与交互保持连贯。</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🧩</span>
+      <h3>信息分区</h3>
+      <p>赛事、数据、资讯分区明确，减少无关干扰，定位更直接。</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🔍</span>
+      <h3>低噪导航</h3>
+      <p>无强制跳转广告，页面说明与功能入口一目了然。</p>
+    </div>
+  </div>
+
+  <!-- 温和结尾 + 场景/FAQ摘要式语气 -->
+  <div class="closing-note">
+    <p><strong>日常场景</strong>  —  想快速查看当前赛事或进入个人页面？通过 
+      <a href="https://appzh-leyu.com.cn">乐鱼体育</a> 
+      首页的导航栏与快捷入口即可完成，不需要反复搜索或记忆复杂地址。页面底部同时保留了常见问题摘要，方便新用户了解平台基础设置。</p>
+    <p>稳定的入口意味着更少的中断。无论你从哪个设备、哪个网络环境进入，加载与响应逻辑一致，不会因为入口变化而丢失上下文。</p>
+    <div class="small-ref">— 页面版本说明 · 结构持续优化 —</div>
+  </div>
+
+  <!-- 尾部辅助（非必要，但可增强结构） -->
+  <div style="text-align: center; margin-top: 1.5rem; font-size: 0.75rem; color: #8b9bb0; letter-spacing: 0.5px;">
+    · 简洁 · 直达 · 乐鱼体育 ·
+  </div>
+</div>
+</body>
+</html>
