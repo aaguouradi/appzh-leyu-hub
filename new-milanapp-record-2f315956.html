@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 | 米兰体育app · 资料整理与场景梳理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f4f5f7;
+            color: #1d2b3a;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ——— 顶部导航 ——— */
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e9ebef;
+            margin-bottom: 2.5rem;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 0.3px;
+            color: #1d2b3a;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #3c4a5b;
+            font-size: 0.95rem;
+            font-weight: 450;
+            transition: color 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .navbar-links a:hover {
+            color: #0b7b6b;
+            border-bottom-color: #0b7b6b;
+        }
+
+        /* ——— hero 区（资料索引说明） ——— */
+        .hero-section {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.8rem 2.5rem;
+            border: 1px solid #e2e5ea;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 2.8rem;
+        }
+
+        .hero-section h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            margin-bottom: 1.25rem;
+            color: #0f1e2c;
+        }
+
+        .hero-section .lead {
+            font-size: 1.1rem;
+            max-width: 700px;
+            color: #2e3d4e;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-section p {
+            margin-bottom: 0.9rem;
+        }
+
+        .inline-link {
+            color: #0b7b6b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #0b7b6b;
+            transition: border 0.2s;
+        }
+
+        .inline-link:hover {
+            border-bottom-style: solid;
+        }
+
+        /* ——— 三卡片场景模块 ——— */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .scene-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 1.8rem 1.8rem 2rem;
+            border: 1px solid #e4e7ec;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .scene-card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #0f1e2c;
+        }
+
+        .scene-card .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: #eef0f3;
+            color: #3c4a5b;
+            padding: 0.1rem 0.6rem;
+            border-radius: 40px;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.2px;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #2f3e4f;
+            margin-bottom: 0.6rem;
+        }
+
+        /* ——— 常见说明 / 轻量 FAQ ——— */
+        .faq-block {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.2rem 2.5rem;
+            border: 1px solid #e2e5ea;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 2.8rem;
+        }
+
+        .faq-block h2 {
+            font-size: 1.6rem;
+            font-weight: 450;
+            margin-bottom: 1.5rem;
+            color: #0f1e2c;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.2rem;
+            color: #1a2b3e;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #2e3d4e;
+        }
+
+        /* ——— 补充信息区 ——— */
+        .extra-note {
+            background: #ffffffcc;
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+            padding: 1.8rem 2.2rem;
+            border: 1px solid #e0e3e8;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+
+        .extra-note p {
+            font-size: 0.95rem;
+            color: #2e3d4e;
+        }
+
+        .footer-meta {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6f7d8c;
+            border-top: 1px solid #dce0e6;
+            padding-top: 2rem;
+            margin-top: 1rem;
+        }
+
+        /* ——— 响应式 ——— */
+        @media (max-width: 900px) {
+            .scenes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+
+            .navbar-links {
+                gap: 1.2rem;
+            }
+
+            .hero-section {
+                padding: 2rem 1.2rem;
+            }
+
+            .hero-section h1 {
+                font-size: 1.6rem;
+            }
+
+            .scenes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .faq-block {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .extra-note {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .navbar-links a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 导航 -->
+    <nav class="navbar">
+        <span class="navbar-brand">📋 资料索引</span>
+        <div class="navbar-links">
+            <a href="#scene-section">应用场景</a>
+            <a href="#faq-section">常见说明</a>
+            <a href="https://new-milanapp.com" class="inline-link" style="border-bottom: none;">米兰体育app</a>
+        </div>
+    </nav>
+
+    <!-- hero / 介绍区域  从资料整理和索引角度切入 -->
+    <section class="hero-section">
+        <h1>信息整理 · 米兰体育app</h1>
+        <p class="lead">
+            从资料归类与使用索引的角度，梳理移动端体育信息服务的几个关键侧面。
+        </p>
+        <p>
+            对一款以体育资讯和赛事数据为核心的服务来说，信息的结构化程度直接影响使用效率。
+            <a href="https://new-milanapp.com" class="inline-link">米兰体育app</a>
+            在功能设计上尝试将赛事动态、数据统计和社区内容进行分区呈现，从而降低用户检索成本。
+            以下三个场景模块概括了日常使用中较为典型的资料查阅方式，每个模块都对应着不同的信息组织逻辑。
+        </p>
+        <p>
+            本篇介绍不强调功能罗列，而是侧重说明这些场景背后「信息索引」的逻辑——即如何通过界面分层、标签筛选和内容聚合，让体育资料更容易被定位和理解。
+        </p>
+    </section>
+
+    <!-- 三个场景卡片 -->
+    <section id="scene-section" style="margin-bottom: 0.5rem;">
+        <h2 style="font-weight: 450; font-size: 1.5rem; color: #0f1e2c; margin-bottom: 1.4rem; border-left: 4px solid #0b7b6b; padding-left: 1rem;">
+            场景模块 · 资料索引方式
+        </h2>
+    </section>
+    <div class="scenes-grid">
+        <div class="scene-card">
+            <span class="card-tag">📂 模块 A</span>
+            <h3>赛事动态 · 时间轴索引</h3>
+            <p>
+                按比赛日期、联赛类别建立垂直时间轴，配合标签（进行中 / 已结束 / 即将开始）实现快速过滤。
+                这种索引结构适合需要回溯近期赛果或追踪某一联赛连续进程的用户，减少横向翻找。
+            </p>
+            <p style="font-size:0.88rem; color:#5a6b7c;">
+                典型信息：比分、赛程、积分变化、关键事件节点。
+            </p>
+        </div>
+        <div class="scene-card">
+            <span class="card-tag">📂 模块 B</span>
+            <h3>数据统计 · 指标聚合</h3>
+            <p>
+                将球员、球队的核心数据（控球率、射门次数、传球成功率等）以卡片和对比视图呈现。
+                多个统计维度并列展示，用户可自由切换赛季或赛事，适合做跨场次的数据摘录与分析。
+            </p>
+            <p style="font-size:0.88rem; color:#5a6b7c;">
+                典型信息：场均数据、排行榜、进阶指标、历史走势。
+            </p>
+        </div>
+        <div class="scene-card">
+            <span class="card-tag">📂 模块 C</span>
+            <h3>内容聚合 · 话题与归档</h3>
+            <p>
+                围绕体育热点、赛事专题、用户讨论进行内容聚合，以标签树和分类目录组织文章与短讯。
+                每个归档条目都附带时间戳和关联链接，方便后续查阅或引用，兼顾信息浏览与资料保存。
+            </p>
+            <p style="font-size:0.88rem; color:#5a6b7c;">
+                典型信息：专题报道、赛后分析、社区精选、话题标签。
+            </p>
+        </div>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <section id="faq-section" class="faq-block">
+        <h2>常见说明 · 信息使用提示</h2>
+        <div class="faq-item">
+            <strong>🔹 数据更新频率与来源</strong>
+            <p>赛事数据和统计内容通常根据官方来源或合作数据商进行同步，不同联赛的更新节奏可能存在差异。建议以赛事状态标签作为判断依据。</p>
+        </div>
+        <div class="faq-item">
+            <strong>🔹 内容索引与搜索</strong>
+            <p>平台内提供关键词搜索和分类筛选功能，结合时间范围、联赛或球队进行组合查询，可提升信息定位效率。资料归档模块亦支持按标签浏览。</p>
+        </div>
+        <div class="faq-item">
+            <strong>🔹 关于访问方式</strong>
+            <p>
+                若希望进一步了解或使用相关服务，可访问
+                <a href="https://new-milanapp.com" class="inline-link">米兰体育app</a>
+                ，在其信息架构中查看完整的模块划分和功能介绍。本页面所述场景仅为部分索引逻辑的示意。
+            </p>
+        </div>
+    </section>
+
+    <!-- 额外说明区域：轻量补充 -->
+    <div class="extra-note">
+        <p>
+            <strong style="font-weight: 500;">📌 索引视角小结</strong><br>
+            从信息整理的角度看，任何一个面向体育场景的应用，其核心都围绕「如何让资料更易查找、更可理解」展开。
+            无论是时间轴、统计面板还是话题归档，本质上都是在构建不同的检索路径。
+            本文所描述的三种场景模块，对应了较为常见的三类索引方式，实际的信息组织可能更为复合。
+        </p>
+        <p style="margin-top: 0.8rem;">
+            <span style="background: #eef0f3; padding: 0.1rem 0.6rem; border-radius: 40px; font-size: 0.8rem;">⏳ 持续整理</span>
+            &nbsp; 后续会根据内容结构变化，更新索引说明。
+        </p>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-meta">
+        <span>资料索引页 · 仅供信息结构说明</span>
+    </div>
+
+</div>
+</body>
+</html>
